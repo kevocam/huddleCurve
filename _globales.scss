@@ -1,0 +1,62 @@
+/* @import "sass/breakpoints"; */
+@import "sass/medias";
+/*
+XS SM MD LG
+*/
+$colorPrimary: hsl(322, 100%, 66%);
+
+/* Neutral */
+$neutralCyan: hsl(192, 100%, 9%);
+$neutralBlue: hsl(207, 100%, 98%);
+
+$FuenteTitulos:'Poppins', sans-serif;
+$FuenteTitulos_weigth:700;
+
+$fuenteBody:'Open Sans', sans-serif;
+$FuenteBody_weigth:600;
+@mixin btnSpecial{
+    border:1px solid $colorPrimary;
+    color:$colorPrimary;
+    border-radius: 50px;
+    font-family: $fuenteBody;
+    
+
+}
+@mixin btn{
+    background :$colorPrimary;
+    color:$colorPrimary;
+    border-radius: 50px;
+    font-family: $fuenteBody;
+    color:$neutralBlue;
+}
+
+/*  400, 600, 700 */
+@mixin img {
+    height: 280px;    
+}
+@mixin title(){
+    font-family: $FuenteTitulos;
+    font-weight: $FuenteTitulos_weigth;
+    font-size: 40px;
+    margin-bottom: 22px;
+}
+@mixin text(){
+    display:flex;
+    margin:0 auto;
+    flex-direction: column;
+    justify-content: center;
+    color: $neutralCyan;
+    font-family: $fuenteBody;
+    font-weight: $FuenteBody_weigth;
+    h3{
+        @include title();
+    }
+}
+
+
+*{
+    margin:0px;
+    padding:0px
+ 
+}
+
