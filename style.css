@@ -234,6 +234,7 @@ XS SM MD LG
   -ms-grid-row: 1;
   -ms-grid-column: 2;
   grid-area: b;
+  width: 80%;
   margin: auto auto;
 }
 
@@ -242,6 +243,10 @@ XS SM MD LG
     height: 220px;
     width: 70%;
   }
+}
+
+.row1_img img {
+  width: 100%;
 }
 
 @media (max-width: 767px) {
@@ -257,6 +262,7 @@ XS SM MD LG
   -ms-grid-column: 1;
   grid-area: c;
   margin: 0 auto;
+  width: 80%;
   /*     margin-bottom:124px
  */
 }
@@ -267,6 +273,10 @@ XS SM MD LG
     width: 90%;
     margin-bottom: 80px;
   }
+}
+
+.row2_img img {
+  width: 100%;
 }
 
 @media (max-width: 767px) {
@@ -393,10 +403,15 @@ XS SM MD LG
 
 .row3_img {
   margin: 0 auto;
+  width: 80%;
   -ms-grid-row: 3;
   -ms-grid-column: 2;
   grid-area: f;
   margin-bottom: 124px;
+}
+
+.row3_img img {
+  width: 100%;
 }
 
 @media (max-width: 767px) {
