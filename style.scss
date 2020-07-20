@@ -226,6 +226,7 @@
 .row3_text{
     grid-area: e;
     @include text;
+width: 80%;
 /*     margin-bottom:150px;
  */    @include breakpoint("xs"){
         width:90%;
