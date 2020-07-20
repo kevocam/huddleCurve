@@ -4,13 +4,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding:25px 15px;
-
-    @include breakpoint('xs'){
-        padding:30px 15px;
-        margin-bottom:50px;
-        
-    }
+    padding:25px 15px;   
     &__btn{        
         @include btnSpecial();
        
@@ -37,71 +31,14 @@
             @include breakpoint('xs') {
             width: 130px;
             
-            }
+            } 
+        
+        }
+        &:hover{
+            transform: translate(0, -5px);
+            width:15px;
         }
     }
-    
-    
-    
-   
-    
-     /*    height: 50px;
-        display: flex;
-        justify-content: space-between;
-        padding:25px 15px;
-        &__btn{        
-                @include btnSpecial();
-                height: 50%;
-                a{
-                    text-decoration: none;
-                    color:$colorPrimary;
-                    padding: 5px 15px;
-                    margin:0 auto;
-                    font-size: 12px;
-                    
-                }
-                &:hover{
-                    @include btnSpecial();
-                    color:white;
-                    border:none;
-                    background:$colorPrimary ;
-                    a{
-                        color:white;
-                        text-align: center;
-                    }
-                }
-               
-
-            }
-        &__logo{
-            img{
-            height: 50%;
-            }
-
-        }
-        @include media(tablet){
-            height: 70px;
-            display: flex;
-            justify-content: space-between;
-            padding:25px 15px;
-            &__btn{        
-                @include btnSpecial();
-                a{
-                    text-decoration: none;
-                    color:$colorPrimary;
-                    padding: 15px 30px;
-                    display: flex;
-                    &:hover{
-                        @include btnSpecial();
-                        color:white;
-                        border:none;
-                        background:$colorPrimary ;
-                    }
-                }
-
-            }
-        }
-     */
 }
 .hero{
     display:flex;
@@ -112,36 +49,29 @@
     &__title{
         font-family: $FuenteTitulos;
         color:$neutralCyan;
-        font-size:24px;
+        font-size:50px;
+        padding-top:120px;
         text-align: center;
-        /* @include media(tablet){
-            font-size: 40px;
-            text-align: center;
-        } */
-        @include breakpoint('xs'){
-            font-size:20px;
-        }
+        
+         @include breakpoint('xs'){
+            font-size:27px;
+            width: 100%;
+        } 
     }
     &__text{
-       
+        width:620px;       
         color:$neutralCyan;
         font-family: $fuenteBody;
         font-weight: $FuenteBody_weigth;
         text-align: center;
+        font-size: 20px;
         margin-top:25px;
-        
-        /* @include media(tablet){
-            width:50%;
-             font-size: 40px;
-            text-align: center;
-            font-size: 18px;
-            color:$neutralCyan;
-            font-family: $fuenteBody;
-            font-weight: $FuenteBody_weigth;
-        } */
-        @include breakpoint('xs'){
-            font-size: 12px;
-        }
+        line-height: 27px;
+         @include breakpoint("xs"){
+             font-size: 16px;
+             line-height: 25px;
+             width:100%;
+        } 
     }
     &__btn{
         margin-top: 60px;
@@ -151,17 +81,24 @@
             padding:20px 40px;
             text-decoration: none;
             display:inline-block;
-            transition: transform .3s ease-out;           
+            transition: transform .3s ease-out; 
+            font-size: 18px;
+            font-weight: 600;          
         }
         a:hover {
             transform: translate(0, -5px);
           }
     }
     &__img{
-        width:100%;
+        margin: 0 auto;
         img{
-            width:100%;
+            width:720px;
+            @include breakpoint("xs"){
+                width:100%;
+                padding-bottom: 80px;
+            } 
         }
+
     }
 }
 
@@ -172,11 +109,12 @@
   grid-template-areas: "a b"
                        "c d"
                        "e f";
+    grid-row-gap:100px;
     @include breakpoint('xs'){
         
         display:grid;
         grid-template-columns: 90%;
-
+        grid-template-rows: auto;
         grid-template-areas: "b"
                             "a"
                             "c "
@@ -187,52 +125,80 @@
 }
 .row1_text{
     grid-area: a;
+    @include breakpoint("xs"){
+        
+    }
     width:80%;
     @include text;
     margin-bottom:124px;
-    @include breakpoint("xs"){
-        
+  @include breakpoint("xs"){
         text-align:center;
-    }
+        width:90%
+    } 
     h3{
-        @include breakpoint("xs"){
+       @include breakpoint("xs"){
             font-size: 22px;
-        }
+        } 
     }
     p{
-        @include breakpoint("xs"){
+         @include breakpoint("xs"){
+             width: 100%;
             font-size: 16px;
             font-weight: 500;
+            text-align: center;
         }
     }
 }
 .row1_img{
     grid-area: b;
-    margin:0 auto;
-    img{
-        @include img;
+    @include breakpoint("xs"){
+       height: 220px;
+       width: 90%;
+        margin-bottom: 160px;
+
     }
-    margin-bottom:124px
+    margin:auto auto;
+    img{
+
+        @include img;
+        @include breakpoint("xs"){
+            width:100%;
+            }
+    }
+     
 
 
 }
 .row2_img{
     grid-area: c;
     margin:0 auto;
+    @include breakpoint("xs"){
+        height: 220px;
+        width: 90%;
+         margin-bottom: 80px;
+ 
+    }
     img{
         @include img;
+        @include breakpoint("xs"){
+            width:100%;
+            }
     }
-    margin-bottom:124px
-
+/*     margin-bottom:124px
+ */
 }
 .row2_text{
     
     grid-area: d;
-    margin:0 auto;
+    @include breakpoint("xs"){
+        width:90%;
+        text-align:center;
+        margin-bottom:120px;
+    }
     width:80%;
     @include text();
-    margin-bottom:124px;
-    @include breakpoint("xs"){
+/*     margin-bottom:124px;
+ */    @include breakpoint("xs"){
         
         text-align:center;
     }
@@ -243,8 +209,10 @@
     }
     p{
         @include breakpoint("xs"){
-            font-size: 16px;
-            font-weight: 500;
+            font-size: 14px;
+            font-weight: 400;
+            text-align: center;
+            line-height: 18px;
         }
     }
 
@@ -255,22 +223,29 @@
     grid-area: e;
     width:80%;
     @include text;
-    margin-bottom:150px;
-    @include breakpoint("xs"){
+/*     margin-bottom:150px;
+ */    @include breakpoint("xs"){
+        width:90%;
         
-        text-align:center;
     }
     h3{
         @include breakpoint("xs"){
             font-size: 22px;
+            text-align: center;
         }
     }
     p{
         @include breakpoint("xs"){
-            font-size: 16px;
-            font-weight: 500;
+           
+            font-size: 14px;
+            font-weight: 400;
+            text-align: center;
+            line-height: 18px;
         }
     }
+    @include breakpoint("xs"){
+/*         height: 60vh;
+ */    }
 
 }
 .row3_img{
@@ -279,9 +254,15 @@
     grid-area: f;
     img{
         @include img;
+        @include breakpoint("xs"){
+            width:100%;
+            }
 
     }
-    margin-bottom:124px
+    margin-bottom:124px;
+    @include breakpoint("xs"){
+    width: 100%;
+    }
 
 }
 .call{
@@ -290,8 +271,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 100px;
-    &__title{
+    margin:120px 0;
+    @include breakpoint("xs"){
+        margin:90px 0;
+    }
+/*     margin-bottom: 100px;
+ */    &__title{
         @include title();
         text-align: center;
         font-size: 24px;
@@ -322,17 +307,18 @@
     }
 .footer{
     color:white;
-    width: 100%;
-    
+    width: 100%;    
 
     &__img{
         img{
-            margin-bottom: -5px;
+            margin-bottom: -7px;
             width:100%;
         }
     }
     &__content{
-        height: 520px;
+        font-family: $fuenteBody;
+        font-weight: $FuenteBody_weigth;
+      
         display:flex;
         background-color: #00252E;
         justify-content: center;
@@ -380,7 +366,8 @@
         &--newsletter{
             width: 720px;
             margin:0 auto;
-            padding-top:34px;
+            
+            box-sizing: border-box;
             @include breakpoint("xs"){
                 width:85%;
             }
@@ -405,6 +392,7 @@
             input{
                 height: 45px;
                 width:350px;
+               
                 border-radius:6px;
                 border:none;
                 margin-right: 30px;
@@ -413,7 +401,7 @@
                 color:$colorPrimary;
                 font-weight: $FuenteTitulos_weigth;
                 @include breakpoint("xs"){
-                    width:90%;
+                    width:100%;
                     height: 35px;
                     margin-bottom:10px;
                 }
@@ -445,9 +433,12 @@ justify-content: center;
 .main__stadistics{
     display: flex;
     justify-content: space-around;
+    margin: 80px 0;
+
     @include breakpoint("xs"){
         flex-direction: column;
         align-items: center;
+        margin: 60px 0
         
     }
     p:first-of-type{
@@ -460,7 +451,7 @@ justify-content: center;
    
     &--comunnities{
         img{
-            width: 25px;
+            width: 35px;
         }
         p:nth-child(3){
             font-family: $fuenteBody;
@@ -468,8 +459,8 @@ justify-content: center;
             font-size: 18px;
         }
         @include breakpoint("xs"){
-            margin-bottom: 75px;
-        }
+             margin-bottom: 75px;
+       }
 
     }  
     &--message{
@@ -490,12 +481,14 @@ justify-content: center;
             text-align:center;
         }
     }
-    margin:150px 0;
-}
+/*     margin:150px 0;
+ */}
 
 .iconRrss{
    fill:white;
    cursor:pointer;
+   margin-top:24px;
+  
 }
 #face{
     background-color:white;
